@@ -33,6 +33,16 @@ final class URLSessionNetworkService: NetworkService {
         parameters: [String: Any]? = nil,
         completion: @escaping (Result<T, Error>) -> Void
     ) {
+        
+        var urlComponents = URLComponents(string: endpoint)
+        
+        // Add query parameters for GET request
+        if method == .get, let parameters = parameters {
+            urlComponents?.queryItems = parameters.map { key, value in
+                URLQueryItem(name: key, value: "\(value)")
+            }
+        }
+        
         guard let url = URL(string: endpoint) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0)))
             return

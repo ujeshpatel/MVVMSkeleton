@@ -7,7 +7,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct UserDataResponse: Codable {
+struct UserDataResponse: Decodable {
     let page, perPage, total, totalPages: Int
     let data: [User]
     let support: Support
@@ -22,7 +22,7 @@ struct UserDataResponse: Codable {
 }
 
 // MARK: - User
-struct User: Codable {
+struct User: Decodable {
     let id: Int
     let email, firstName, lastName: String
     let avatar: String
@@ -36,7 +36,7 @@ struct User: Codable {
 }
 
 // MARK: - Support
-struct Support: Codable {
+struct Support: Decodable {
     let url: String
     let text: String
 }
