@@ -27,6 +27,7 @@ class UserTableViewCell: UITableViewCell {
         if let url = URL(string: user.avatar) {
             loadImage(from: url)
         }
+        self.selectionStyle = .none
     }
     
     private func loadImage(from url: URL) {

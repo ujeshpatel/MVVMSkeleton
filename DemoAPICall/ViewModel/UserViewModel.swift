@@ -30,7 +30,7 @@ final class UserViewModel {
     func fetchUsers(completion: @escaping (Bool, String?) -> Void) {
         let endpoint = "https://reqres.in/api/users"
 
-        networkService.request(endpoint: endpoint, method: "GET", parameters: nil) { [weak self] (result: Result<UserDataResponse, Error>) in
+        networkService.request(endpoint: endpoint, method: .get, parameters: nil) { [weak self] (result: Result<UserDataResponse, Error>) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let response):

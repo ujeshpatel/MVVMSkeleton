@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let userViewModel = UserViewModel()
+    private let userViewModel = UserViewModel()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,16 +25,18 @@ class ViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "UserTableViewCell")
         
         tableView.dataSource = self
-        tableView.rowHeight = 125
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 125
+
     }
     
     func fetchUsers() {
-        userViewModel.fetchUsers { [weak self] success, errorMessage in
+        userViewModel.fetchUsers {[weak self] success, errorMessage in
             DispatchQueue.main.async {
                 if success {
                     self?.tableView.reloadData()
                 } else {
-                    print("❌ Failed to fetch users: \(errorMessage ?? "Unknown Error")")
+                    print("Failed to fetch users: \(errorMessage ?? "Unknown Error")")
                 }
             }
         }

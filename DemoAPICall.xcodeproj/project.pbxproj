@@ -10,9 +10,22 @@
 		BF01919A2DAF874200751028 /* DemoAPICall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoAPICall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BF8801082DB279A100C11BA8 /* Exceptions for "DemoAPICall" folder in "DemoAPICall" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BF0191992DAF874200751028 /* DemoAPICall */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BF01919C2DAF874200751028 /* DemoAPICall */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BF8801082DB279A100C11BA8 /* Exceptions for "DemoAPICall" folder in "DemoAPICall" target */,
+			);
 			path = DemoAPICall;
 			sourceTree = "<group>";
 		};
